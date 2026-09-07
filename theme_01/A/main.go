@@ -24,21 +24,22 @@ func SelectionSort(nums []int) {
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
-	scanner.Scan()
-	text := scanner.Text()
+	if scanner.Scan() {
+		text := scanner.Text()
+		words := strings.Fields(text)
 
-	words := strings.Fields(text)
+		var nums []int
+		for _, word := range words {
+			num, _ := strconv.Atoi(word)
+			nums = append(nums, num)
+		}
 
-	var nums []int
-
-	for _, word := range words {
-		num, _ := strconv.Atoi(word)
-		nums = append(nums, num)
+		if len(nums) > 0 {
+			SelectionSort(nums)
+			for _, num := range nums {
+				fmt.Print(num, " ")
+			}
+			fmt.Println()
+		}
 	}
-
-	SelectionSort(nums)
-	for _, num := range nums {
-		fmt.Print(num, " ")
-	}
-	fmt.Println()
 }
