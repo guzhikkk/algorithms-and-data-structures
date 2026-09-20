@@ -1,4 +1,4 @@
-def BubbleSort(array):
+def Bubble_sort(array):
     n = len(array)
     for i in range(n - 1):
         for j in range(n - i - 1):
@@ -8,5 +8,5 @@ def BubbleSort(array):
 
 input_data = input().split()
 arr = [int(x) for x in input_data]
-BubbleSort(arr)
+Bubble_sort(arr)
 print(*arr)
