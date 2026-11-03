@@ -45,7 +45,6 @@ class MaxHeap:
                 # обновление индекса
                 i = j
             else:
-                # завершение цикла
                 break
 
     def delMax(self):
